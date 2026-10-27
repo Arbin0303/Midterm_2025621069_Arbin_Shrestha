@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Personal Expense Tracker</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_history">Transaction History</string>
+    <string name="title_add">Add Transaction</string>
+    <string name="title_detail">Transaction Detail</string>
+    <string name="delete_confirm_title">Delete Transaction</string>
+    <string name="delete_confirm_message">Are you sure you want to delete this transaction? This action cannot be undone.</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_edit">Edit Transaction</string>
+    <string name="empty_transactions">No transactions found. Tap + to add one.</string>
+    <string name="saved_successfully">Transaction saved!</string>
+</resources>

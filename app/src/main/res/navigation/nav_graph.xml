@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <!-- Dashboard -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.personalexpensetracker.ui.dashboard.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard">
+
+        <action
+            android:id="@+id/action_dashboard_to_addTransaction"
+            app:destination="@id/addTransactionFragment" />
+
+        <action
+            android:id="@+id/action_dashboard_to_history"
+            app:destination="@id/transactionHistoryFragment" />
+
+        <action
+            android:id="@+id/action_dashboard_to_detail"
+            app:destination="@id/transactionDetailFragment" />
+    </fragment>
+
+    <!-- Transaction History -->
+    <fragment
+        android:id="@+id/transactionHistoryFragment"
+        android:name="com.example.personalexpensetracker.ui.history.TransactionHistoryFragment"
+        android:label="History"
+        tools:layout="@layout/fragment_transaction_history">
+
+        <action
+            android:id="@+id/action_history_to_detail"
+            app:destination="@id/transactionDetailFragment" />
+    </fragment>
+
+    <!-- Add / Edit Transaction -->
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.example.personalexpensetracker.ui.addtransaction.AddTransactionFragment"
+        android:label="Add Transaction"
+        tools:layout="@layout/fragment_add_transaction">
+
+        <!-- transactionId = -1 means insert mode; any positive int = edit mode -->
+        <argument
+            android:name="transactionId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <!-- Transaction Detail -->
+    <fragment
+        android:id="@+id/transactionDetailFragment"
+        android:name="com.example.personalexpensetracker.ui.detail.TransactionDetailFragment"
+        android:label="Transaction Detail"
+        tools:layout="@layout/fragment_transaction_detail">
+
+        <argument
+            android:name="transactionId"
+            app:argType="integer" />
+
+        <action
+            android:id="@+id/action_detail_to_addTransaction"
+            app:destination="@id/addTransactionFragment" />
+    </fragment>
+
+</navigation>
